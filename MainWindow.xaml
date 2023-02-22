@@ -1,0 +1,17 @@
+﻿<Window x:Class="NotesApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:NotesApp"
+        Title="Заметки" Height="350" Width="543">
+    <Grid>
+        <DatePicker x:Name="datePicker" Margin="10,10,95,0" SelectedDate="{Binding DateTime}" DisplayDate="{Binding DateTime}" SelectedDateChanged="datePicker_SelectedDateChanged" Height="31" VerticalAlignment="Top" />
+        <ListBox x:Name="notesList" Margin="10,65,95,10" ItemsSource="{Binding Notes}" DisplayMemberPath="Title" SelectedItem="{Binding SelectedNote}" SelectionChanged="notesList_SelectionChanged" />
+        <StackPanel Margin="0,10,15,0" HorizontalAlignment="Right" Width="67">
+            <Button x:Name="addNoteButton" Content="Добавить" Margin="0,0,0,5" Click="addNoteButton_Click" Background="#FF00FF22" />
+            <Button x:Name="editNoteButton" Content="Изменить" Margin="0,0,0,5" Click="editNoteButton_Click_1" Background="#FFFFF900" />
+            <Button x:Name="deleteNoteButton" Content="Удалить" Margin="0,0,0,5" Click="deleteNoteButton_Click" Background="#FFFF0E31"/>
+            
+            <Button x:Name="saveNotesButton" Content="Сохранить" Margin="0,196,0,5" Click="saveNotesButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
